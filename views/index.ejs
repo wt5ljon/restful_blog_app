@@ -1,3 +1,5 @@
+<% include partials/header.ejs %>
+
 <h1>Index Page!</h1>
 <div>
   <% posts.forEach(function(post) { %>
@@ -7,3 +9,5 @@
        <p><%= post.body %></p>       
   <% }) %>
 </div>
+
+<% include partials/footer.ejs %>

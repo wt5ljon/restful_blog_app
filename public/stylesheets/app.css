@@ -9,3 +9,7 @@ i.icon {
 .container.segment {
   margin-top: 4.0em;
 }
+
+#delete {
+  display: inline;
+}

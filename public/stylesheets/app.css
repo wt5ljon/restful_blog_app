@@ -10,6 +10,10 @@ i.icon {
   margin-top: 4.0em;
 }
 
+.ui.container.segment {
+  margin-bottom: 1.0em;
+}
+
 #delete {
   display: inline;
 }

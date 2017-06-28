@@ -1,14 +1,30 @@
 <% include partials/header.ejs %>
 
-<h1>Index Page!</h1>
-<div>
-  <% posts.forEach(function(post) { %>
-       <h2><%= post.title %></h2>
-       <img src="<%= post.image %>">
-       <p><em><%= post.created %></em></p>
-       <p><%= post.body.substring(0, 100) %>...</p>  
-       <a href="/blogs/<%= post._id %>">Read More</a>     
-  <% }) %>
+<div class="ui main text container segment">
+  <div class="ui huge header">RESTful Blog App</div>
+  <div class="ui top attached segment">
+    <div class="ui divided items">
+      <% posts.forEach(function(post) { %>
+        <div class="item">
+          <div class="image">
+            <img src="<%= post.image %>">
+          </div>
+          <div class="content">
+            <a class="header" href="/blogs/<%= post._id %>"><%= post.title %></a>
+            <div class="meta">
+              <span><%= post.created.toDateString() %></span>
+            </div>
+            <div class="description">
+              <p><%- post.body.substring(0, 100) %>...</p>
+            </div>
+            <div class="extra">
+              <a class="ui floated blue basic button" href="/blogs/<%= post._id %>">Read More <i class="right chevron icon"></i></a>
+            </div>
+          </div>
+        </div>
+      <% }) %> 
+    </div>
+  </div>
 </div>
 
 <% include partials/footer.ejs %>
